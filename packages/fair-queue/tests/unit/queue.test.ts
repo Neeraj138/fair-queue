@@ -75,16 +75,22 @@ describe('Fair Queue', () => {
       payload: 'c1',
     });
     let result = await queue.dequeue(queueName);
+    expect(result?.clientId).toBe('a');
     expect(result?.payload).toBe('a1');
     result = await queue.dequeue(queueName);
+    expect(result?.clientId).toBe('b');
     expect(result?.payload).toBe('b1');
     result = await queue.dequeue(queueName);
+    expect(result?.clientId).toBe('c');
     expect(result?.payload).toBe('c1');
     result = await queue.dequeue(queueName);
+    expect(result?.clientId).toBe('a');
     expect(result?.payload).toBe('a2');
     result = await queue.dequeue(queueName);
+    expect(result?.clientId).toBe('b');
     expect(result?.payload).toBe('b2');
     result = await queue.dequeue(queueName);
+    expect(result?.clientId).toBe('a');
     expect(result?.payload).toBe('a3');
   });
 });
