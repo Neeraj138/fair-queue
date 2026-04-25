@@ -1,0 +1,11 @@
+{
+  "name": "fair-queue-demo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun run ./src/index.ts"
+  },
+  "dependencies": {
+    "fair-queue": "workspace:*"
+  }
+}
